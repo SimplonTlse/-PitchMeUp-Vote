@@ -5,25 +5,24 @@ $(document).ready(function(){
 
 	$('.btn').on('click', function(event){
 		event.preventDefault();
+		resetCacheColor();
+		$('.cache').show();
 		var id = ($(this).attr('id'));
 		if (id == 'ok') {
 			$('.cache').addClass('bg-green');
-			$('.cache').removeClass('bg-orange');
-			$('.cache').removeClass('bg-red');
-			$('.cache').show();
 		} else if (id == "pascompris") {
 			$('.cache').addClass('bg-orange');
-			$('.cache').removeClass('bg-green');
-			$('.cache').removeClass('bg-red');
-			$('.cache').show();
 		} else if (id == "non") {
 			$('.cache').addClass('bg-red');
-			$('.cache').removeClass('bg-green');
-			$('.cache').removeClass('bg-orange');
-			$('.cache').show();
 		}
 
 	});
+
+	function resetCacheColor(){
+		$('.cache').removeClass('bg-red');
+		$('.cache').removeClass('bg-green');
+		$('.cache').removeClass('bg-orange');
+	}
 
 	$('.cache').click(function(){
 		$('.cache').hide();
