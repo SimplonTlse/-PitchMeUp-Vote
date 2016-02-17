@@ -1,0 +1,54 @@
+html {
+	height: 100%;
+}
+
+body {
+ 	height: 100%;
+}
+
+.boutons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#ok {
+	background-color: #76ff03;
+	border-radius: 10px;
+	width: 150px;
+	height: 50px;
+}
+
+#pascompris {
+	background-color:  #FFAF2A;
+	border-radius: 10px;
+	width: 150px;
+	height: 50px;
+}
+
+#non {
+	background-color: #ff0000;
+	border-radius: 10px;
+	width: 150px;
+	height: 50px;
+}
+
+.cache {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.bg-green {
+	background-color: #76ff03;
+}
+
+.bg-orange {
+	background-color: #FFAF2A;
+}
+
+.bg-red {
+	background-color: #ff0000;
+}
