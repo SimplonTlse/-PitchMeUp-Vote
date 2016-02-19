@@ -7,30 +7,38 @@ body {
 }
 
 .boutons {
+	margin: 0;
+	height: 33%;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	justify-content: center;
 }
 
 #ok {
 	background-color: #76ff03;
 	border-radius: 10px;
-	width: 150px;
-	height: 50px;
+	width: 100%;
+	height: 100%;
+	font-size: 5em;
+	font-weight: bold;
 }
 
 #pascompris {
 	background-color:  #FFAF2A;
 	border-radius: 10px;
-	width: 150px;
-	height: 50px;
+	width: 100%;
+	height: 100%;
+	font-size: 5em;
+	font-weight: bold;
 }
 
 #non {
 	background-color: #ff0000;
 	border-radius: 10px;
-	width: 150px;
-	height: 50px;
+	width: 100%;
+	height: 100%;
+	font-size: 5em;
+	font-weight: bold;
 }
 
 .cache {
@@ -52,3 +60,21 @@ body {
 .bg-red {
 	background-color: #ff0000;
 }
+
+.startups {
+	width: 100%;
+
+}
+.startups a {
+	text-decoration: none;
+	color: black;
+}
+
+/*.startups h1 {
+	text-align: center;
+}
+
+.startups h3 {	
+	text-align: center;
+}
+*/
