@@ -6,14 +6,22 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+	<!-- <?php 
+		if (!isset($_COOKIE['ipvisitor'])) {
+			setcookie('ipvisitor',$_SERVER['REMOTE_ADDR']);
+		} else {
+			return "Vous avez déja votez!";
+		}
+	?> -->
 	<div class="boutons">
-		<button class="btn" id="ok">J'adhère</button>
+		<button class="btn" id="bg-green">J'adhère</button>
 	</div>
 	<div class="boutons">
-		<button class="btn" id="pascompris">Je n'ai pas compris</button>
+		<button class="btn" id="bg-orange">Je n'ai pas compris</button>
 	</div>
 	<div class="boutons">
-		<button class="btn" id="non">Je n'adhère pas</button>
+		<button class="btn" id="bg-red">Je n'adhère pas</button>
 	</div>
 
 	<div class="cache">

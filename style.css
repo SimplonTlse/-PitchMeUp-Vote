@@ -14,7 +14,7 @@ body {
 	justify-content: center;
 }
 
-#ok {
+#bg-green {
 	background-color: #76ff03;
 	border-radius: 10px;
 	width: 100%;
@@ -23,7 +23,7 @@ body {
 	font-weight: bold;
 }
 
-#pascompris {
+#bg-orange {
 	background-color:  #FFAF2A;
 	border-radius: 10px;
 	width: 100%;
@@ -32,7 +32,7 @@ body {
 	font-weight: bold;
 }
 
-#non {
+#bg-red {
 	background-color: #ff0000;
 	border-radius: 10px;
 	width: 100%;
@@ -63,18 +63,29 @@ body {
 
 .startups {
 	width: 100%;
-
 }
+
+.startups {
+	height: 100%;
+}
+
+.titre {
+	margin: 10%;
+	text-align: center;
+}
+
+.titre h1 {
+	font-size: 4em;
+}
+
 .startups a {
 	text-decoration: none;
 	color: black;
 }
 
-/*.startups h1 {
-	text-align: center;
-}
-
 .startups h3 {	
 	text-align: center;
+	margin: 40px;
+	font-size: 2em;
 }
-*/
+
