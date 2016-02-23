@@ -63,19 +63,7 @@ body {
 
 .startups {
 	width: 100%;
-}
-
-.startups {
 	height: 100%;
-}
-
-.titre {
-	margin: 10%;
-	text-align: center;
-}
-
-.titre h1 {
-	font-size: 4em;
 }
 
 .startups a {
@@ -88,4 +76,14 @@ body {
 	margin: 40px;
 	font-size: 2em;
 }
+
+.titre {
+	margin: 10%;
+	text-align: center;
+}
+
+.titre h1 {
+	font-size: 4em;
+}
+
 
