@@ -5,6 +5,7 @@
 
 ## Step 2
 * [ ] Ajout du vote associé à un projet
+* [ ] Réaliser une Github Page du projet
 
 ## Step 2-bis
 * [ ] Ajout d'un compte à rebours (par défaut 5 minutes)
