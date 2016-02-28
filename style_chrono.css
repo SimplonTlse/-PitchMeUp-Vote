@@ -5,18 +5,20 @@ ul {
 body {
 	display: flex;
 	flex-direction: column;
+	background-color: black;
 }
 
 .timer  {
-	height: 100px;
-	width: 50%;
+	height: 355px;
+	width: 100%;
 	margin: 30px auto;
 	background-color: black;
 	color: white;
 	font-weight: bold;
 	text-align: center;
-	font-size: 85px;
+	font-size: 14em;
 	border-radius: 10px;
+	padding-top: 75px;
 }
 
 .play {
@@ -42,5 +44,18 @@ body {
 }
 
 .btn {
+	margin: 30px auto;
+	padding-top: 50px;
+}
+
+.time-change {
 	margin: auto;
+}
+
+.time-change input {
+	width: 200px;
+	height: 50px;
+	font-size: 30px;
+	border-radius: 10px;
+	text-align: center;
 }
