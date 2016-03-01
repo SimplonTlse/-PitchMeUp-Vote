@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	var secondes = 5;
-	var minutes = 0;
+	var secondes = 0;
+	var minutes = 5;
 	var dixiemeSeconde = 0;
 	var on = false;
 	var reset = false;

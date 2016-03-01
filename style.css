@@ -4,7 +4,56 @@ html {
 
 body {
  	height: 100%;
+ 	margin: 0;
 }
+
+/**
+ * Index
+ */
+
+.titreSession {
+	margin: 0 10%;
+	text-align: center;
+}
+
+.titreSession h1 {
+	font-size: 4em;
+}
+
+.sessions {
+	display: flex;
+	justify-content: space-around;
+	height: 200px;
+	width: 100%;
+}
+
+.session {
+	height: 100px;
+	width: 280px;
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 30px;
+}
+
+.sessions a {
+	margin: auto;
+}
+
+footer {
+	margin-top: 170px;
+	text-align: center;
+}
+
+footer p {
+	font-size: 3em;
+}
+
+/**
+ * Vote
+ */
 
 .boutons {
 	margin: 0;
@@ -49,6 +98,10 @@ body {
 	left: 0;
 }
 
+/**
+ * classes JS
+ */
+
 .bg-green {
 	background-color: #76ff03;
 }
@@ -60,6 +113,10 @@ body {
 .bg-red {
 	background-color: #ff0000;
 }
+
+/**
+ * Session 3
+ */
 
 .startups {
 	width: 100%;
@@ -86,4 +143,59 @@ body {
 	font-size: 4em;
 }
 
+/**
+ * Session 4
+ */
 
+.voteChrono {
+	height: 30%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.vote {
+	height: 100px;
+	width: 280px;
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 30px;
+}
+
+.chrono {
+	height: 100px;
+	width: 280px;
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 30px;
+}
+
+.weekend {
+	display: flex;
+	justify-content: center;
+}
+
+.imgwe {
+	width: 80%;
+	height: 30%;
+}
+
+.inscriptions {
+	display: flex;
+	justify-content: center;
+	padding-top: 90px;
+}
+
+.inscriptions a {
+	font-size: 3em;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
