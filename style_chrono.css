@@ -32,7 +32,7 @@ body {
 	font-size: 20px;
 }
 
-.init {
+.reinitialiser {
 	height: 60px;
 	width: 160px;
 	border-radius: 10px;
@@ -44,18 +44,24 @@ body {
 }
 
 .btn {
-	margin: 30px auto;
+	margin: auto;
 	padding-top: 50px;
 }
 
 .time-change {
 	margin: auto;
-}
-
-.time-change input {
+	margin-top: 20px;
 	width: 200px;
 	height: 50px;
 	font-size: 30px;
 	border-radius: 10px;
 	text-align: center;
+}
+
+.bg-red {
+	background-color: red;
+}
+
+.bg-black {
+	background-color: black;
 }

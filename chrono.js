@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	var secondes = 10;
-	var minutes = 00;
+	var secondes = 5;
+	var minutes = 0;
 	var dixiemeSeconde = 0;
 	var on = false;
 	var reset = false;
@@ -9,7 +9,7 @@ $(document).ready(function(){
 		Start();
 	});
 
-	$('.init').click(function(){
+	$('.reinitialiser').click(function(){
 		Reset();
 	});
 
@@ -23,11 +23,27 @@ $(document).ready(function(){
 		afficher(minutes, secondes);
 	}
 
+	var timeoutID;
+
 	function compteARebours() {
 		dixiemeSeconde = dixiemeSeconde - 1;
+		var interrupteur = true;
+		var reset = true;
 
 		if (secondes === 0 && minutes === 0 && dixiemeSeconde === 0) {
 			arreterCompteARebours();
+			rouge();
+			
+			timeoutID = window.setInterval(function(){
+				effaceCouleur();
+				if (interrupteur) {
+					noir();
+				} else {
+					rouge();
+				}
+
+				interrupteur = !interrupteur;
+			}, 500);
 		}
 
 		if (dixiemeSeconde < 0) {
@@ -43,16 +59,6 @@ $(document).ready(function(){
 	}
 
 	function afficher(minutes, secondes, dixiemeSeconde) {
-
-		// if (minutes < 10 && secondes < 10) {
-		// 	$('.timer').html("0" + minutes + " : 0" + secondes);
-		// } else if (minutes < 10 && secondes >= 10) {
-		// 	$('.timer').html("0" + minutes + " : " + secondes);
-		// } else if (minutes >= 10 && secondes < 10) {
-		// 	$('.timer').html(+ minutes + " : 0" + secondes);
-		// } else if (minutes >= 10 && secondes > 10) {
-		// 	$('.timer').html(+ minutes + " : " + secondes);
-		// }
 
 		if (secondes < 10) {
 			secondes = "0" + secondes;
@@ -80,13 +86,60 @@ $(document).ready(function(){
 	function Reset() {
 		if (reset === false) {
 			clearInterval(timerID);
+			clearInterval(timeoutID);
+			noir();
 			secondes = 0;
 			minutes = 5;
 			dixiemeSeconde = 0;
 			afficher(minutes, secondes, dixiemeSeconde);
 			reset = true;
 			on = false;
+			$('body').removeClass('bg-red');
+			$('.play').removeClass('bg-red');
+			$('.reinitialiser').removeClass('bg-red');
+			$('.timer').removeClass('bg-red');
 		}
+
+	}
+	
+	function effaceCouleur() {
+		$('body').removeClass('bg-black');
+		$('.play').removeClass('bg-black');
+		$('.reinitialiser').removeClass('bg-black');
+		$('.timer').removeClass('bg-black');
+
+		$('body').removeClass('bg-red');
+		$('.play').removeClass('bg-red');
+		$('.reinitialiser').removeClass('bg-red');
+		$('.timer').removeClass('bg-red');
+	}
+
+	function noir() {
+		$('body').addClass('bg-black');
+		$('.play').addClass('bg-black');
+		$('.reinitialiser').addClass('bg-black');
+		$('.timer').addClass('bg-black');
+	}
+
+	function rouge() {
+		$('body').addClass('bg-red');
+		$('.play').addClass('bg-red');
+		$('.reinitialiser').addClass('bg-red');
+		$('.timer').addClass('bg-red');
 	}
 
 });
+
+	// function syncroCpteRebours() {
+	// 	if ('.time-change' === null) {
+	// 		secondes = 0;
+	// 		minutes = 5;
+	// 		dixiemeSeconde = 0;
+	// 		afficher(minutes, secondes, dixiemeSeconde);
+	// 	};
+
+	// }
+
+
+
+
