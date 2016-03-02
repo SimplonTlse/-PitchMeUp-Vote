@@ -1,0 +1,30 @@
+{
+	"startups" : {[
+		{
+			"name": "Yenni", 
+			"slogan" : "La santé à tout prix",
+			"thumbnailUrl" : "http://www.senenews.com/wp-content/uploads/2015/06/carte-Yenni-150x150.png"
+		},
+		{
+			"name": "JVF", 
+			"slogan" : "Startup Builder",
+			"thumbnailUrl" : "http://www.senenews.com/wp-content/uploads/2015/06/carte-Yenni-150x150.png"
+		},
+		{
+			"name": "Wesh", 
+			"slogan" : "Wesh T'es où ?",
+			"thumbnailUrl" : "http://www.senenews.com/wp-content/uploads/2015/06/carte-Yenni-150x150.png"
+		},
+		{
+			"name": "Mamie Régale", 
+			"slogan" : "La santé à tout prix",
+			"thumbnailUrl" : "http://www.senenews.com/wp-content/uploads/2015/06/carte-Yenni-150x150.png"
+		},
+		{
+			"name": "Tut Tut", 
+			"slogan" : "La santé à tout prix",
+			"thumbnailUrl" : "http://www.senenews.com/wp-content/uploads/2015/06/carte-Yenni-150x150.png"
+		}
+	]}
+
+}
