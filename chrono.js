@@ -1,11 +1,12 @@
 $(document).ready(function(){
 	var secondes = 0;
-	var minutes = 5;
+	var minutes = 0;
 	var dixiemeSeconde = 0;
 	var on = false;
 	var reset = false;
 
 	$('.play').click(function(){
+		syncroCpteRebours();
 		Start();
 	});
 
@@ -13,15 +14,15 @@ $(document).ready(function(){
 		Reset();
 	});
 
-	function chrono() {
-		secondes = secondes + 1;
+	// function chrono() {
+	// 	secondes = secondes + 1;
 
-		if (secondes > 59) {
-			minutes = minutes + 1;
-			secondes = 0;
-		}
-		afficher(minutes, secondes);
-	}
+	// 	if (secondes > 59) {
+	// 		minutes = minutes + 1;
+	// 		secondes = 0;
+	// 	}
+	// 	afficher(minutes, secondes);
+	// }
 
 	var timeoutID;
 
@@ -43,7 +44,7 @@ $(document).ready(function(){
 				}
 
 				interrupteur = !interrupteur;
-			}, 500);
+			}, 350);
 		}
 
 		if (dixiemeSeconde < 0) {
@@ -128,17 +129,19 @@ $(document).ready(function(){
 		$('.timer').addClass('bg-red');
 	}
 
+	function syncroCpteRebours() {
+			var bla = $('#time-change').val();
+			if (bla === '') {
+				Reset();
+			} else {
+				minutes = bla;
+				secondes = 0;
+				dixiemeSeconde = 0;
+			}
+			afficher(minutes, secondes, dixiemeSeconde);
+	}
+
 });
-
-	// function syncroCpteRebours() {
-	// 	if ('.time-change' === null) {
-	// 		secondes = 0;
-	// 		minutes = 5;
-	// 		dixiemeSeconde = 0;
-	// 		afficher(minutes, secondes, dixiemeSeconde);
-	// 	};
-
-	// }
 
 
 

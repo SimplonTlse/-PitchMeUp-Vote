@@ -16,7 +16,7 @@ body {
 	color: white;
 	font-weight: bold;
 	text-align: center;
-	font-size: 14em;
+	font-size: 13em;
 	border-radius: 10px;
 	padding-top: 75px;
 }
@@ -48,7 +48,7 @@ body {
 	padding-top: 50px;
 }
 
-.time-change {
+#time-change {
 	margin: auto;
 	margin-top: 20px;
 	width: 200px;
