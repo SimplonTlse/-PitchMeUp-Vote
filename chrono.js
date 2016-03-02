@@ -72,6 +72,8 @@ $(document).ready(function(){
 		$('.timer').html(minutes + " : " + secondes + " . " + dixiemeSeconde);
 	}
 
+	var timerID;
+
 	function Start() {
 		if (on === false) {
 			timerID = setInterval(compteARebours, 100);
@@ -131,14 +133,23 @@ $(document).ready(function(){
 
 	function syncroCpteRebours() {
 			var bla = $('#time-change').val();
+			var b = parseInt(bla);
+
 			if (bla === '') {
 				Reset();
+			} else if (b) {
+				if (b > 0) {
+					minutes = bla;
+					secondes = 0;
+					dixiemeSeconde = 0;
+				} else {
+					Reset();
+				}
 			} else {
-				minutes = bla;
-				secondes = 0;
-				dixiemeSeconde = 0;
+				Reset();
 			}
 			afficher(minutes, secondes, dixiemeSeconde);
+
 	}
 
 });
