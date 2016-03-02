@@ -55,5 +55,3 @@ function cl(name){
 function att(name){
 	return '[' + name + ']';
 }
-
-
