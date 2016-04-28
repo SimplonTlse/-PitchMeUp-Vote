@@ -5,6 +5,7 @@ $(document).ready(function(){
 	var on = false;
 	var reset = false;
 
+	var duration = 0;
 	$('.play').click(function(){
 		syncroCpteRebours();
 		Start();
@@ -27,6 +28,8 @@ $(document).ready(function(){
 	var timeoutID;
 
 	function compteARebours() {
+		var now = Date.now();
+		console.log(start_date);
 		dixiemeSeconde = dixiemeSeconde - 1;
 		var interrupteur = true;
 		var reset = true;
@@ -34,7 +37,7 @@ $(document).ready(function(){
 		if (secondes === 0 && minutes === 0 && dixiemeSeconde === 0) {
 			arreterCompteARebours();
 			rouge();
-			
+
 			timeoutID = window.setInterval(function(){
 				effaceCouleur();
 				if (interrupteur) {
@@ -73,7 +76,8 @@ $(document).ready(function(){
 	}
 
 	var timerID;
-
+	var start_date = Date.now();
+	console.log(start_date);
 	function Start() {
 		if (on === false) {
 			timerID = setInterval(compteARebours, 100);
@@ -94,6 +98,8 @@ $(document).ready(function(){
 			secondes = 0;
 			minutes = 5;
 			dixiemeSeconde = 0;
+
+			syncroCpteRebours();
 			afficher(minutes, secondes, dixiemeSeconde);
 			reset = true;
 			on = false;
@@ -104,7 +110,7 @@ $(document).ready(function(){
 		}
 
 	}
-	
+
 	function effaceCouleur() {
 		$('body').removeClass('bg-black');
 		$('.play').removeClass('bg-black');
@@ -148,12 +154,9 @@ $(document).ready(function(){
 			} else {
 				Reset();
 			}
+	//		duration = ( 60 * minutes * 1000
 			afficher(minutes, secondes, dixiemeSeconde);
 
 	}
 
 });
-
-
-
-
