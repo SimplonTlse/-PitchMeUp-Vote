@@ -6,6 +6,7 @@ $(document).ready(function(){
 	var reset = false;
 	var player;
 
+	var duration = 0;
 	$('.play').click(function(){
 		syncroCpteRebours();
 		Start();
@@ -48,18 +49,22 @@ $(document).ready(function(){
  //    }
 
 	function compteARebours() {
+		var now = Date.now();
+		console.log(start_date);
 		dixiemeSeconde = dixiemeSeconde - 1;
 		// var interrupteur = true;
 		var reset = true;
 		
 		if (secondes === 0 && minutes === 0 && dixiemeSeconde === 0) {
 			arreterCompteARebours();
+
 				$(".input").hide();
 				$(".timer").hide();
 				$(".btn").hide();
 				$(".video").show();
 				timeup();
 			
+			/* clignotement rouge noir avant la mise en place de la vidéo */
 			// timeoutID = window.setInterval(function(){
 				// effaceCouleur();
 				// if (interrupteur) {
@@ -71,7 +76,6 @@ $(document).ready(function(){
 				// interrupteur = !interrupteur;
 			// });
 		}	
-
 
 		if (dixiemeSeconde < 0) {
 			secondes = secondes - 1;
@@ -99,7 +103,8 @@ $(document).ready(function(){
 	}
 
 	var timerID;
-
+	var start_date = Date.now();
+	console.log(start_date);
 	function Start() {
 		if (on === false) {
 			timerID = setInterval(compteARebours, 100);
@@ -121,6 +126,8 @@ $(document).ready(function(){
 			secondes = 0;
 			minutes = 5;
 			dixiemeSeconde = 0;
+
+			syncroCpteRebours();
 			afficher(minutes, secondes, dixiemeSeconde);
 			reset = true;
 			on = false;
@@ -175,9 +182,8 @@ $(document).ready(function(){
 			} else {
 				Reset();
 			}
+	//		duration = ( 60 * minutes * 1000
 			afficher(minutes, secondes, dixiemeSeconde);
 	}
 
 });
-
-

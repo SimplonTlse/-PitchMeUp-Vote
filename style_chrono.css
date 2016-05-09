@@ -1,5 +1,5 @@
-ul { 
-	list-style-image: none; 
+ul {
+	list-style-image: none;
 }
 
 body {
@@ -9,14 +9,14 @@ body {
 }
 
 .timer  {
-	height: 355px;
+	height: 80%;
 	width: 100%;
 	margin: 30px auto;
 	background-color: black;
 	color: white;
 	font-weight: bold;
 	text-align: center;
-	font-size: 13em;
+	font-size: 8em;
 	border-radius: 10px;
 	padding-top: 75px;
 }
