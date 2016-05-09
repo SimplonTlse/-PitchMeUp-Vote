@@ -57,11 +57,16 @@ body {
 	border-radius: 10px;
 	text-align: center;
 }
-
+/*
 .bg-red {
 	background-color: red;
 }
 
 .bg-black {
 	background-color: black;
+}*/
+
+#player {
+	height: 100vh;
+	width: 100vw;
 }

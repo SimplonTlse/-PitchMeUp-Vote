@@ -1,5 +1,5 @@
 {
-	"startups" : {[
+	"startups" : [
 		{
 			"name": "Yenni", 
 			"slogan" : "La santé à tout prix",
@@ -25,6 +25,5 @@
 			"slogan" : "La santé à tout prix",
 			"thumbnailUrl" : "http://www.senenews.com/wp-content/uploads/2015/06/carte-Yenni-150x150.png"
 		}
-	]}
-
+	]
 }
