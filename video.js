@@ -1,4 +1,4 @@
-$(".video").hide();
+$(".videos").hide();
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
