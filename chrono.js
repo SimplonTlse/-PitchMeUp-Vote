@@ -57,7 +57,7 @@ $(document).ready(function(){
 				$(".input").hide();
 				$(".timer").hide();
 				$(".btn").hide();
-				$(".videos").show();
+				$(".video").show();
 				timeup();
 			
 			// timeoutID = window.setInterval(function(){
