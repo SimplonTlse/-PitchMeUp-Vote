@@ -1,18 +1,27 @@
 $(document).ready(function(){
 	var secondes = 0;
-	var minutes = 0;
+	var minutes = 5;
 	var dixiemeSeconde = 0;
 	var on = false;
 	var reset = false;
+	var player;
 
 	$('.play').click(function(){
 		syncroCpteRebours();
 		Start();
+		initPlayer();
 	});
 
 	$('.reinitialiser').click(function(){
 		Reset();
 	});
+
+	// $("#player").click(function(){
+	// 	$(".video").hide();
+	// 	$(".input").show();
+	// 	$(".timer").show();
+	// 	$(".btn").show();
+	// });
 
 	// function chrono() {
 	// 	secondes = secondes + 1;
@@ -25,27 +34,44 @@ $(document).ready(function(){
 	// }
 
 	var timeoutID;
+	// var intervalID = setInterval(getCurrentTime, 100); // ms
+
+	// function getCurrentTime() {
+		
+ //    	var currentTime = player.getCurrentTime();
+ //    	if (currentTime > 58.828685) {
+ //            $(".input").show();
+ //            $(".timer").show();
+ //            $(".btn").show();
+ //            $(".video").hide();
+ //        }
+ //    }
 
 	function compteARebours() {
 		dixiemeSeconde = dixiemeSeconde - 1;
-		var interrupteur = true;
+		// var interrupteur = true;
 		var reset = true;
-
+		
 		if (secondes === 0 && minutes === 0 && dixiemeSeconde === 0) {
 			arreterCompteARebours();
-			rouge();
+				$(".input").hide();
+				$(".timer").hide();
+				$(".btn").hide();
+				$(".video").show();
+				timeup();
 			
-			timeoutID = window.setInterval(function(){
-				effaceCouleur();
-				if (interrupteur) {
-					noir();
-				} else {
-					rouge();
-				}
+			// timeoutID = window.setInterval(function(){
+				// effaceCouleur();
+				// if (interrupteur) {
+				// 	noir();
+				// } else {
+				// 	rouge();
+				// }
 
-				interrupteur = !interrupteur;
-			}, 350);
-		}
+				// interrupteur = !interrupteur;
+			// });
+		}	
+
 
 		if (dixiemeSeconde < 0) {
 			secondes = secondes - 1;
@@ -90,6 +116,7 @@ $(document).ready(function(){
 		if (reset === false) {
 			clearInterval(timerID);
 			clearInterval(timeoutID);
+			// clearInterval(intervalID);
 			noir();
 			secondes = 0;
 			minutes = 5;
@@ -97,25 +124,25 @@ $(document).ready(function(){
 			afficher(minutes, secondes, dixiemeSeconde);
 			reset = true;
 			on = false;
-			$('body').removeClass('bg-red');
-			$('.play').removeClass('bg-red');
-			$('.reinitialiser').removeClass('bg-red');
-			$('.timer').removeClass('bg-red');
+			// $('body').removeClass('bg-red');
+			// $('.play').removeClass('bg-red');
+			// $('.reinitialiser').removeClass('bg-red');
+			// $('.timer').removeClass('bg-red');
 		}
 
 	}
 	
-	function effaceCouleur() {
-		$('body').removeClass('bg-black');
-		$('.play').removeClass('bg-black');
-		$('.reinitialiser').removeClass('bg-black');
-		$('.timer').removeClass('bg-black');
+	// function effaceCouleur() {
+	// 	$('body').removeClass('bg-black');
+	// 	$('.play').removeClass('bg-black');
+	// 	$('.reinitialiser').removeClass('bg-black');
+	// 	$('.timer').removeClass('bg-black');
 
-		$('body').removeClass('bg-red');
-		$('.play').removeClass('bg-red');
-		$('.reinitialiser').removeClass('bg-red');
-		$('.timer').removeClass('bg-red');
-	}
+	// 	$('body').removeClass('bg-red');
+	// 	$('.play').removeClass('bg-red');
+	// 	$('.reinitialiser').removeClass('bg-red');
+	// 	$('.timer').removeClass('bg-red');
+	// }
 
 	function noir() {
 		$('body').addClass('bg-black');
@@ -124,12 +151,12 @@ $(document).ready(function(){
 		$('.timer').addClass('bg-black');
 	}
 
-	function rouge() {
-		$('body').addClass('bg-red');
-		$('.play').addClass('bg-red');
-		$('.reinitialiser').addClass('bg-red');
-		$('.timer').addClass('bg-red');
-	}
+	// function rouge() {
+	// 	$('body').addClass('bg-red');
+	// 	$('.play').addClass('bg-red');
+	// 	$('.reinitialiser').addClass('bg-red');
+	// 	$('.timer').addClass('bg-red');
+	// }
 
 	function syncroCpteRebours() {
 			var bla = $('#time-change').val();
@@ -149,11 +176,8 @@ $(document).ready(function(){
 				Reset();
 			}
 			afficher(minutes, secondes, dixiemeSeconde);
-
 	}
 
 });
-
-
 
 
