@@ -6,40 +6,37 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-		<div class="container">
-			<div class="titre">
-				<h1>Les différentes Start Up de ce jour</h1>
-			</div>
-			<div class="startups">
-				<a href="vote.html"><h3>Start Up 1</h3></a>
-				<a href="vote.html"><h3>Start Up 2</h3></a>
-				<a href="vote.html"><h3>Start Up 3</h3></a>
-				<a href="vote.html"><h3>Start Up 4</h3></a>
-				<a href="vote.html"><h3>Start Up 5</h3></a>
-				<a href="vote.html"><h3>Start Up 6</h3></a>
-				<a href="vote.html"><h3>Start Up 7</h3></a>
-				
-				<?php
-					$json = file_get_contents("data/startups.json");
-					
-					$parsed_json = json_decode($json);
-
-				?>
-
-				<a href="vote.html"><h3> Start Up : 
-					<?php 
-						
-						foreach ($json => $name) {
-							echo $parsed_json->{"startups"}[0]->{'name'}; 
-							
-						}
-					?>	
-				</h3></a>
-
-			</div>
+	<div class="container">
+		<div class="titre">
+			<h1>Les différentes Start Up de ce jour</h1>
 		</div>
+		<div class="startups">
+			<a href="vote.html"><h3>Start Up 1</h3></a>
+			<a href="vote.html"><h3>Start Up 2</h3></a>
+			<a href="vote.html"><h3>Start Up 3</h3></a>
+			<a href="vote.html"><h3>Start Up 4</h3></a>
+			<a href="vote.html"><h3>Start Up 5</h3></a>
+			<a href="vote.html"><h3>Start Up 6</h3></a>
+			<a href="vote.html"><h3>Start Up 7</h3></a>
 
+		<!-- <?php
+			$json = file_get_contents("data/startups.json");
+
+			$parsed_json = json_decode($json);
+
+			?> -->
+
+			<a href="vote.html"><h3> Start Up : 
+			<!-- <?php 
+
+				foreach ($json => $name) {
+					echo $parsed_json->{"startups"}[0]->{'name'}; 
+
+				}
+				?> -->	
+			</h3></a>
+		</div>
+	</div>
 
 	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
