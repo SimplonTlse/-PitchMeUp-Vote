@@ -1,4 +1,4 @@
-html{
+html {
 	height: 100%;
 }
 
@@ -7,9 +7,22 @@ body {
 	margin:0;
 }
 
-#prem{
-	height:100%;
+/* Accueil */
+
+.image {
+	display: flex;
+	justify-content: center;
 }
+
+/* Vote */
+#btns_vote{
+	height: 100%;
+}
+
+#btn_retour {
+	height: 10%;
+}
+
 .cartons{
 	margin: 0;
 	height: 30%;
@@ -42,6 +55,19 @@ body {
 	height: 100%;
 	font-weight: bold;
 }
-#sec{
-	height: 10%;
+
+/*pages couleur votes*/
+.bg_green {
+	height: 100%;
+	background-color: #3ac569;
+}
+
+.bg_orange {
+	height: 100%;
+	background-color: orange;
+}
+
+.bg_red {
+	height: 100%;
+	background-color: red;
 }
