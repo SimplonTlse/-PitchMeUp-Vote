@@ -19,7 +19,6 @@ $(document).ready(function(){
 	});
 
 	var timeoutID;
-	/* var intervalID = setInterval(getCurrentTime, 100 //ms); */ 
 
 	function compteARebours() {
 		var now = Date.now();
