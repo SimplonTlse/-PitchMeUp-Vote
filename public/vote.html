@@ -8,9 +8,23 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	<h2>Je suis un vote</h2>
+		<div class="cartons">
+		 	<a href={this.lien()} class="waves-effect waves-light btn" id="vert">
+            <i class="material-icons centered">thumb_up</i>C'est clair</a>
+        </div>
+
+		<div class="cartons">
+			<a href={this.lien()} class="waves-effect waves-light btn orange" id="orange">
+            <i class="material-icons centered">thumbs_up_down</i>Je n'ai pas tout compris</a>
+		</div>
+
+		<div class="cartons">
+			<a href={this.lien()} class="waves-effect waves-light btn red" id="rouge">
+            <i class="material-icons centered">thumb_down</i>Ce n'est pas clair</a>
+		</div>
+
 	<div>
-		<a href="index.html" class="waves-effect waves-light btn grey">
+		<a href="index.html" class="waves-effect waves-light btn grey" id="retour">
     	<i class="material-icons left">fast_rewind</i>Accueil</a>
 	</div>
 	
