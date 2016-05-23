@@ -70,3 +70,12 @@ body {
 	height: 100%;
 	background-color: red;
 }
+
+#retour_vote {
+	background-color: white; 
+}
+
+#icone_retour{
+	color: #3ac569;
+	font-size: 3em;
+}
