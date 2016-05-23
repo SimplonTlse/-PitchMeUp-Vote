@@ -1,24 +1,42 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var sass        = require('gulp-sass');
+var elixir = require('laravel-elixir');
 
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function() {
+require( 'elixir-jshint' );
+ 
+/**
+ destination folder
+ **/
+var dest = 'public/';
 
-    browserSync.init({
-        server: "./"
+//trailing slash required.
+elixir.config.assetsDir = 'resources/assets/'; 
+
+elixir.config.publicPath = dest;
+
+elixir.config.js.browserify.transformers.push({
+    name: 'babelify',
+    options: {}
+});
+
+elixir( function( mix ){
+    mix.jshint( ['js/**/*.js', '!js/vendor/*.js'], {
+        lookup: true, // default is true 
+        linter: 'jshint' // default is "jshint" 
     });
-
-    gulp.watch("scss/*.scss", ['sass']);
-    gulp.watch("/*.html").on('change', browserSync.reload);
 });
 
-// Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function() {
-    return gulp.src("scss/*.scss")
-        .pipe(sass())
-        .pipe(gulp.dest("css"))
-        .pipe(browserSync.stream());
+elixir(function(mix) {
+    mix.sass('app.scss', dest + 'css/style.css');
 });
 
-gulp.task('default', ['serve']);
+elixir(function(mix) {
+    mix.browserify('main.js', dest + 'js/bundle.js', null, {
+        global: true
+    });
+});
+
+elixir(function(mix) {
+    mix.browserSync({
+      server:'./public',
+      proxy: false
+    });
+});
