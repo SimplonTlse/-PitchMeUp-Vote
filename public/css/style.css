@@ -3,8 +3,8 @@ html {
 }
 
 body {
- 	height: 100%;
- 	margin: 0;
+	height:100%;
+	margin:0;
 }
 
 /* Accueil */
@@ -56,6 +56,7 @@ body {
 	font-weight: bold;
 }
 
+/*pages couleur votes*/
 .bg_green {
 	height: 100%;
 	background-color: #3ac569;
