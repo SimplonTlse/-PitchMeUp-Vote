@@ -19057,7 +19057,7 @@ var Vote = React.createClass({
         return this.state.query + '/vote.html';
     },
     render: function render() {
-        return React.createElement('div', { className: 'boutons' }, React.createElement('a', { href: this.lien(), className: 'waves-effect waves-light btn grey' }, React.createElement('i', { className: 'material-icons right' }, 'offline_pin'), 'Votez'));
+        return React.createElement('div', { className: 'boutons' }, React.createElement('a', { href: this.lien(), id: 'vote', className: 'waves-effect waves-light btn grey' }, React.createElement('i', { className: 'material-icons right' }, 'offline_pin'), 'Votez'));
     }
 });
 
@@ -19076,7 +19076,7 @@ var CompteARebours = React.createClass({
         return this.state.query + '/car.html';
     },
     render: function render() {
-        return React.createElement('div', { className: 'boutons' }, React.createElement('a', { href: this.lien(), className: 'waves-effect waves-light btn grey' }, React.createElement('i', { className: 'material-icons right' }, 'alarm_on'), 'Compte à rebours'));
+        return React.createElement('div', { className: 'boutons' }, React.createElement('a', { href: this.lien(), id: 'car', className: 'waves-effect waves-light btn grey' }, React.createElement('i', { className: 'material-icons right' }, 'alarm_on'), 'Compte à rebours'));
     }
 });
 

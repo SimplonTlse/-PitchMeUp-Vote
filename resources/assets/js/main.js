@@ -16,7 +16,7 @@ var Vote = React.createClass({
     render: function() {
         return (
             <div className="boutons">
-                <a href={this.lien()} className="waves-effect waves-light btn grey">
+                <a href={this.lien()} id="vote" className="waves-effect waves-light btn grey">
                 <i className="material-icons right">offline_pin</i>Votez</a>
             </div>
         );
@@ -38,7 +38,7 @@ var CompteARebours = React.createClass({
     render: function() {
         return (
             <div className="boutons">
-                <a href={this.lien()} className="waves-effect waves-light btn grey">
+                <a href={this.lien()} id="car" className="waves-effect waves-light btn grey">
                 <i className="material-icons right">alarm_on</i>Compte à rebours</a>
             </div>
         );
