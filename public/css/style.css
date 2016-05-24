@@ -9,11 +9,33 @@ body {
 
 /* Accueil */
 
+
+.main{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+#btns{
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+}
+
+.bouton{
+display: inline-block;
+flex: 1;
+}
+
+.pif{
+	width: 90%;
+}
+
 .image {
 	display: flex;
 	justify-content: center;
+	height: auto;
 }
-
 /* Vote */
 .btn_retour {
 	height:5vh;
