@@ -39,7 +39,7 @@ body {
 	font-size: 3em;
 }
 
-#vert {
+.vert {
 	background-color: #3ac569;
 }
 
@@ -54,31 +54,8 @@ body {
 	font-weight: bold;
 }
 
-/*pages couleur votes
-.bg_green {
-	background-color: #3ac569;
+.cartonVote{
+	height: 100%;
+	width: 100%;
+	background-color: green;
 }
-
-.bg_orange {
-	background-color: orange;
-}
-
-.bg_red {
-	background-color: red;
-}
-
-#retour_vote {
-	background-color: white; 
-}
-
-#icone_retour_vert {
-	color: #3ac569;
-}
-
-#icone_retour_orange {
-	color: orange;
-}
-
-#icone_retour_rouge {
-	color: red;
-}*/
