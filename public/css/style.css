@@ -15,60 +15,55 @@ body {
 }
 
 /* Vote */
-#btns_vote{
-	height: 100%;
+.btn_retour {
+	height:5vh;
 }
 
-#btn_retour {
-	height: 10%;
-}
-
-.cartons{
-	margin: 0;
-	height: 30%;
-	width: 100%;
+.cartons {
 	display: flex;
-	justify-content: center;
+	height: 100vh;
+	flex-direction: column;
+}	
+
+.cartons-inner {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
 }
 
-#vert{
+.carton{
+	width: 100%;
+	font-weight: bold;
+	display: block;
+	flex: 1;
+	font-size: 3em;
+}
+
+#vert {
 	background-color: #3ac569;
+}
+
+.material-icons {
+	font-size: 2em!important;
+}
+
+#retour {
 	width: 100%;
 	height: 100%;
+	font-size: 2em;
 	font-weight: bold;
 }
 
-#orange{
-	height: 100%;
-	width: 100%;
-	font-weight: bold;
-}
-
-#rouge{
-	width: 100%;
-	height: 100%;
-	font-weight: bold;
-}
-
-#retour{
-	width: 100%;
-	height: 100%;
-	font-weight: bold;
-}
-
-/*pages couleur votes*/
+/*pages couleur votes
 .bg_green {
-	height: 100%;
 	background-color: #3ac569;
 }
 
 .bg_orange {
-	height: 100%;
 	background-color: orange;
 }
 
 .bg_red {
-	height: 100%;
 	background-color: red;
 }
 
@@ -76,7 +71,14 @@ body {
 	background-color: white; 
 }
 
-#icone_retour{
+#icone_retour_vert {
 	color: #3ac569;
-	font-size: 3em;
 }
+
+#icone_retour_orange {
+	color: orange;
+}
+
+#icone_retour_rouge {
+	color: red;
+}*/
