@@ -28894,15 +28894,15 @@ var CompteARebours = React.createClass({
 	}
 });
 
-var WrapperCar = React.createClass({
-	displayName: 'WrapperCar',
+var WrapperAccueil = React.createClass({
+	displayName: 'WrapperAccueil',
 
 	render: function render() {
 		return React.createElement('div', null, React.createElement(Vote, null), React.createElement(CompteARebours, null));
 	}
 });
 
-module.exports = WrapperCar;
+module.exports = WrapperAccueil;
 
 },{"jquery":158,"react":157,"react-dom":28}],161:[function(require,module,exports){
 'use strict';
@@ -28916,11 +28916,11 @@ if (node) {
     ReactDOM.render(React.createElement(Wrapper, null), node);
 };
 
-var WrapperCar = require('./accueil.js');
+var WrapperAccueil = require('./accueil.js');
 var node2 = document.querySelector("[x-react-car]");
 
 if (node2) {
-    ReactDOM.render(React.createElement(WrapperCar, null), node2);
+    ReactDOM.render(React.createElement(WrapperAccueil, null), node2);
 };
 
 },{"./accueil.js":160,"./vote.js":162,"react":157,"react-dom":28}],162:[function(require,module,exports){

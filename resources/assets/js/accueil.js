@@ -43,7 +43,7 @@ let CompteARebours = React.createClass({
 	}
 });
 
-let WrapperCar = React.createClass({
+let WrapperAccueil = React.createClass({
 	render: function() {
         return (
             <div>
@@ -54,5 +54,5 @@ let WrapperCar = React.createClass({
     }
 });
 
-module.exports = WrapperCar;
+module.exports = WrapperAccueil;
 
