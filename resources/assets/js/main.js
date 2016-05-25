@@ -10,7 +10,7 @@ if (node) {
     );
 };
 
-let WrapperCar = require('./car.js');
+let WrapperCar = require('./accueil.js');
 let node2 = document.querySelector("[x-react-car]");
 
 if (node2) {

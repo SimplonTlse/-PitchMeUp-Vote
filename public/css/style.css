@@ -58,7 +58,7 @@ body {
 }
 
 .bouton {
-	display: inline-flex;
+	display: inline-block;
 	margin: 30px;
 }
 
@@ -67,6 +67,7 @@ body {
 	height: 6vh!important;
 	width: 43vw;
 	font-size: 2em;
+	padding-top: 30px!important;
 }
 
 .car {
@@ -74,4 +75,5 @@ body {
 	height: 6vh!important;
 	width: 43vw;
 	font-size: 2em;
+	padding-top: 30px!important;
 }

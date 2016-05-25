@@ -36,7 +36,6 @@ let Bouton = React.createClass({
         this.props.trigger(this.props.value);
     },
     render: function(){
-        console.log(this.props);
         const visible = (!this.props.current || this.props.value === this.props.current) && "block" || "none";
         console.log(visible);
         return (

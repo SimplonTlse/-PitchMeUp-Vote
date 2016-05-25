@@ -28863,16 +28863,34 @@ var $ = require('jquery');
 var Vote = React.createClass({
 	displayName: 'Vote',
 
+	getInitialState: function getInitialState() {
+		return { query: '' };
+	},
+	queryChange: function queryChange(evenement) {
+		this.setState({ query: evenement.target.value });
+	},
+	lien: function lien() {
+		return this.state.query + '/vote.html';
+	},
 	render: function render() {
-		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn vote' }, React.createElement('i', { className: 'material-icons left' }, 'offline_pin'), 'Vote'));
+		return React.createElement('div', { className: 'bouton' }, React.createElement('a', { href: this.lien(), className: 'waves-effect waves-light btn vote' }, React.createElement('i', { className: 'material-icons left' }, 'offline_pin'), 'Vote'));
 	}
 });
 
 var CompteARebours = React.createClass({
 	displayName: 'CompteARebours',
 
+	getInitialState: function getInitialState() {
+		return { query: '' };
+	},
+	queryChange: function queryChange(evenement) {
+		this.setState({ query: evenement.target.value });
+	},
+	lien: function lien() {
+		return this.state.query + '/car.html';
+	},
 	render: function render() {
-		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn car' }, React.createElement('i', { className: 'material-icons left' }, 'alarm_on'), 'Compte à rebours'));
+		return React.createElement('div', { className: 'bouton' }, React.createElement('a', { href: this.lien(), className: 'waves-effect waves-light btn car' }, React.createElement('i', { className: 'material-icons left' }, 'alarm_on'), 'Compte à rebours'));
 	}
 });
 
@@ -28898,14 +28916,14 @@ if (node) {
     ReactDOM.render(React.createElement(Wrapper, null), node);
 };
 
-var WrapperCar = require('./car.js');
+var WrapperCar = require('./accueil.js');
 var node2 = document.querySelector("[x-react-car]");
 
 if (node2) {
     ReactDOM.render(React.createElement(WrapperCar, null), node2);
 };
 
-},{"./car.js":160,"./vote.js":162,"react":157,"react-dom":28}],162:[function(require,module,exports){
+},{"./accueil.js":160,"./vote.js":162,"react":157,"react-dom":28}],162:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
@@ -28943,7 +28961,6 @@ var Bouton = React.createClass({
         this.props.trigger(this.props.value);
     },
     render: function render() {
-        console.log(this.props);
         var visible = (!this.props.current || this.props.value === this.props.current) && "block" || "none";
         console.log(visible);
         return React.createElement('button', { style: { display: visible }, className: "waves-effect waves-light btn carton " + this.props.color, onClick: this.onClick }, React.createElement('i', { className: 'material-icons right' }, this.props.icon), this.props.text);
