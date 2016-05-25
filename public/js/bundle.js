@@ -28856,16 +28856,55 @@ process.umask = function() { return 0; };
 },{}],160:[function(require,module,exports){
 'use strict';
 
+var React = require('react');
+var ReactDOM = require('react-dom');
+var $ = require('jquery');
+
+var Vote = React.createClass({
+	displayName: 'Vote',
+
+	render: function render() {
+		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn grey vote' }, React.createElement('i', { className: 'material-icons left' }, 'offline_pin'), 'Vote'));
+	}
+});
+
+var CompteARebours = React.createClass({
+	displayName: 'CompteARebours',
+
+	render: function render() {
+		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn grey car' }, React.createElement('i', { className: 'material-icons left' }, 'alarm_on'), 'Compte à rebours'));
+	}
+});
+
+var WrapperCar = React.createClass({
+	displayName: 'WrapperCar',
+
+	render: function render() {
+		return React.createElement('div', null, React.createElement(Vote, null), React.createElement(CompteARebours, null));
+	}
+});
+
+module.exports = WrapperCar;
+
+},{"jquery":158,"react":157,"react-dom":28}],161:[function(require,module,exports){
+'use strict';
+
 var Wrapper = require('./vote.js');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var node = document.querySelector("[x-react-vote]");
+var WrapperCar = require('./car.js');
+var node2 = document.querySelector("[x-react-car]");
 
 if (node) {
     ReactDOM.render(React.createElement(Wrapper, null), node);
 };
 
-},{"./vote.js":161,"react":157,"react-dom":28}],161:[function(require,module,exports){
+if (node2) {
+    ReactDOM.render(React.createElement(WrapperCar, null), node2);
+};
+
+},{"./car.js":160,"./vote.js":162,"react":157,"react-dom":28}],162:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
@@ -28921,6 +28960,6 @@ var Wrapper = React.createClass({
 
 module.exports = Wrapper;
 
-},{"jquery":158,"react":157,"react-dom":28}]},{},[160]);
+},{"jquery":158,"react":157,"react-dom":28}]},{},[161]);
 
 //# sourceMappingURL=bundle.js.map

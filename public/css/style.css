@@ -42,3 +42,14 @@ body {
 	font-size: 2em;
 	font-weight: bold;
 }
+
+/* Compte à rebours */
+
+.bouton {
+	display: inline-block;
+}
+
+.cptearebours {
+	display: flex;
+	justify-content: center;
+}

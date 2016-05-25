@@ -1,21 +1,40 @@
-//fonction pour redirect sur page compte a rebourss
-var CompteARebours = React.createClass({
-	getInitialState: function(){
-	 	return {query: ''}
-	 },
-	 queryChange: function(evenement){
-	 	this.setState({query: evenement.target.value});
-	 },
+'use strict'
+let React = require('react');
+let ReactDOM = require('react-dom');
+let $ = require('jquery');
 
-	 lien: function(){
-	 	return this.state.query+'/car.html';
-	 },
-    render: function() {
+let Vote = React.createClass({
+	render: function(){
+		return (
+			<div className="bouton">
+				<button className="waves-effect waves-light btn grey vote">
+                <i className="material-icons left">offline_pin</i>Vote</button>
+            </div>
+		);
+	}
+});
+
+let CompteARebours = React.createClass({
+	render: function(){
+		return (
+			<div className="bouton">
+				<button className="waves-effect waves-light btn grey car">
+                <i className="material-icons left">alarm_on</i>Compte à rebours</button>
+            </div>
+		);
+	}
+});
+
+let WrapperCar = React.createClass({
+	render: function() {
         return (
-            <div className="bouton">
-                <a href={this.lien()} id="car" className="waves-effect waves-light btn grey">
-                <i className="material-icons right">alarm_on</i>Compte à rebours</a>
+            <div>
+                <Vote />
+                <CompteARebours />
             </div>
         );
     }
 });
+
+module.exports = WrapperCar;
+
