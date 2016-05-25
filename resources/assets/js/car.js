@@ -7,7 +7,7 @@ let Vote = React.createClass({
 	render: function(){
 		return (
 			<div className="bouton">
-				<button className="waves-effect waves-light btn grey vote">
+				<button className="waves-effect waves-light btn vote">
                 <i className="material-icons left">offline_pin</i>Vote</button>
             </div>
 		);
@@ -18,7 +18,7 @@ let CompteARebours = React.createClass({
 	render: function(){
 		return (
 			<div className="bouton">
-				<button className="waves-effect waves-light btn grey car">
+				<button className="waves-effect waves-light btn car">
                 <i className="material-icons left">alarm_on</i>Compte à rebours</button>
             </div>
 		);

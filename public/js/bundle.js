@@ -28864,7 +28864,7 @@ var Vote = React.createClass({
 	displayName: 'Vote',
 
 	render: function render() {
-		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn grey vote' }, React.createElement('i', { className: 'material-icons left' }, 'offline_pin'), 'Vote'));
+		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn vote' }, React.createElement('i', { className: 'material-icons left' }, 'offline_pin'), 'Vote'));
 	}
 });
 
@@ -28872,7 +28872,7 @@ var CompteARebours = React.createClass({
 	displayName: 'CompteARebours',
 
 	render: function render() {
-		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn grey car' }, React.createElement('i', { className: 'material-icons left' }, 'alarm_on'), 'Compte à rebours'));
+		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn car' }, React.createElement('i', { className: 'material-icons left' }, 'alarm_on'), 'Compte à rebours'));
 	}
 });
 
@@ -28893,12 +28893,13 @@ var Wrapper = require('./vote.js');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var node = document.querySelector("[x-react-vote]");
-var WrapperCar = require('./car.js');
-var node2 = document.querySelector("[x-react-car]");
 
 if (node) {
     ReactDOM.render(React.createElement(Wrapper, null), node);
 };
+
+var WrapperCar = require('./car.js');
+var node2 = document.querySelector("[x-react-car]");
 
 if (node2) {
     ReactDOM.render(React.createElement(WrapperCar, null), node2);
