@@ -28873,7 +28873,7 @@ var Vote = React.createClass({
 		return this.state.query + '/vote.html';
 	},
 	render: function render() {
-		return React.createElement('div', { className: 'bouton' }, React.createElement('a', { href: this.lien(), className: 'waves-effect waves-light btn vote' }, React.createElement('i', { className: 'material-icons left' }, 'offline_pin'), 'Vote'));
+		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn vote' }, React.createElement('i', { className: 'material-icons left' }, 'offline_pin'), 'Vote'));
 	}
 });
 
@@ -28887,10 +28887,22 @@ var CompteARebours = React.createClass({
 		this.setState({ query: evenement.target.value });
 	},
 	lien: function lien() {
-		return this.state.query + '/car.html';
+		alert("coucou");
+		//return this.state.query + '/car.html';
 	},
 	render: function render() {
-		return React.createElement('div', { className: 'bouton' }, React.createElement('a', { href: this.lien(), className: 'waves-effect waves-light btn car' }, React.createElement('i', { className: 'material-icons left' }, 'alarm_on'), 'Compte à rebours'));
+		return React.createElement('div', { className: 'bouton' }, React.createElement('button', { className: 'waves-effect waves-light btn car', onClick: this.lien }, React.createElement('i', { className: 'material-icons left' }, 'alarm_on'), 'Compte à rebours'));
+	}
+});
+
+var Boutons = React.createClass({
+	displayName: 'Boutons',
+
+	onClick: function onClick() {
+		this.props.trigger(this.props.value);
+	},
+	render: function render() {
+		return React.createElement('button', { className: "waves-effect waves-light btn vote " + this.props.color /*onClick={this.onClick}*/ }, React.createElement('i', { className: 'material-icons right' }, this.props.icon), this.props.text);
 	}
 });
 
@@ -28905,9 +28917,55 @@ var WrapperAccueil = React.createClass({
 module.exports = WrapperAccueil;
 
 },{"jquery":158,"react":157,"react-dom":28}],161:[function(require,module,exports){
-"use strict";
+'use strict';
 
-},{}],162:[function(require,module,exports){
+var React = require('react');
+var ReactDOM = require('react-dom');
+var $ = require('jquery');
+
+var Video = React.createClass({
+	displayName: 'Video',
+
+	render: function render() {
+		return React.createElement('div', { className: 'video' }, React.createElement('div', { className: 'player' }));
+	}
+});
+
+var Input = React.createClass({
+	displayName: 'Input',
+
+	render: function render() {
+		return React.createElement('input', { className: 'input', type: 'number', id: 'time-change' });
+	}
+});
+
+var Timer = React.createClass({
+	displayName: 'Timer',
+
+	render: function render() {
+		return React.createElement('div', { className: 'timer' }, '05 : 00 . 0');
+	}
+});
+
+var Boutons = React.createClass({
+	displayName: 'Boutons',
+
+	render: function render() {
+		return React.createElement('div', { className: 'btns_car' }, React.createElement('div', { className: 'btn_play' }, React.createElement('button', { className: 'waves-effect waves-light btn black play' }, React.createElement('i', { className: 'material-icons left' }, 'play_arrow'), 'Démarrer')), React.createElement('div', { className: 'btn_init' }, React.createElement('button', { className: 'waves-effect waves-light btn black init' }, React.createElement('i', { className: 'material-icons left' }, 'replay'), 'Réinitialiser')));
+	}
+});
+
+var WrapperCar = React.createClass({
+	displayName: 'WrapperCar',
+
+	render: function render() {
+		return React.createElement('div', null, React.createElement(Video, null), React.createElement(Input, null), React.createElement(Timer, null), React.createElement(Boutons, null));
+	}
+});
+
+module.exports = WrapperCar;
+
+},{"jquery":158,"react":157,"react-dom":28}],162:[function(require,module,exports){
 'use strict';
 
 var Wrapper = require('./vote.js');
@@ -28928,6 +28986,10 @@ if (node2) {
 
 var WrapperCar = require('./car.js');
 var node3 = document.querySelector("[x-react-car]");
+
+if (node3) {
+    ReactDOM.render(React.createElement(WrapperCar, null), node3);
+};
 
 },{"./accueil.js":160,"./car.js":161,"./vote.js":163,"react":157,"react-dom":28}],163:[function(require,module,exports){
 'use strict';

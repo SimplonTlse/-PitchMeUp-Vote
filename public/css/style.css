@@ -43,7 +43,7 @@ body {
 	font-weight: bold;
 }
 
-/* Compte à rebours */
+/* Page d'accueil */
 .image_accueil {
 	display: flex;
 	justify-content: center;
@@ -67,7 +67,6 @@ body {
 	height: 6vh!important;
 	width: 43vw;
 	font-size: 2em;
-	padding-top: 30px!important;
 }
 
 .car {
@@ -75,5 +74,23 @@ body {
 	height: 6vh!important;
 	width: 43vw;
 	font-size: 2em;
-	padding-top: 30px!important;
+}
+
+/* Compte à rebours */
+.cptearebours {
+	height: 100%;
+	background-color: black;
+}
+
+.timer {
+	height: 80%;
+	width: 100%;
+	margin: 30px auto;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	font-size: 8em;
+	border-radius: 10px;
+	padding-top: 75px;
 }

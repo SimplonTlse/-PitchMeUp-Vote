@@ -22,3 +22,10 @@ if (node2) {
 
 let WrapperCar = require('./car.js');
 let node3 = document.querySelector("[x-react-car]");
+
+if (node3) {
+    ReactDOM.render(
+        <WrapperCar />,
+        node3
+    );
+};
