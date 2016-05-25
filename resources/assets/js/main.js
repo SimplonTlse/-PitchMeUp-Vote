@@ -11,7 +11,7 @@ if (node) {
 };
 
 let WrapperAccueil = require('./accueil.js');
-let node2 = document.querySelector("[x-react-car]");
+let node2 = document.querySelector("[x-react-accueil]");
 
 if (node2) {
     ReactDOM.render(
@@ -19,3 +19,6 @@ if (node2) {
         node2
     );
 };
+
+let WrapperCar = require('./car.js');
+let node3 = document.querySelector("[x-react-car]");
