@@ -44,12 +44,34 @@ body {
 }
 
 /* Compte à rebours */
-
-.bouton {
-	display: inline-block;
+.image_accueil {
+	display: flex;
+	justify-content: center;
+	height: auto;
 }
 
 .cptearebours {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: 30vh;
+}
+
+.bouton {
+	display: inline-flex;
+	margin: 30px;
+}
+
+.vote {
+	background-color: #1F73CB!important;
+	height: 6vh!important;
+	width: 43vw;
+	font-size: 2em;
+}
+
+.car {
+	background-color: #1F73CB!important;
+	height: 6vh!important;
+	width: 43vw;
+	font-size: 2em;
 }
