@@ -2,33 +2,31 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 let $ = require('jquery');
+let Redirect = require('react-redirect');
 
 let VoteCar = React.createClass({
 	getInitialState: function() {
-		return {query: ''}
+		return {query: null}
 	},
-	queryChange: function(evenement) {
-		this.setState({query: evenement.target.value});
-	},
-	lien: function() {
-		return this.state.query + '/vote.html';
+	lien: function(idBtn) {
+		// console.log(idBtn);
+		// if (idBtn == "1"){
+		// 	//alert("je suis le vote");
+  //  			<Redirect location='/vote.html' />
+		// } else if(idBtn == "2"){
+		// 	return this.state.query + '/car.html';
+		// }
+		// this.setState({query: idBtn});
 	},
 	render: function(){
 		return (
-			// <div className="bouton">
-			// 	<button className="waves-effect waves-light btn vote">
-   //              <i className="material-icons left">offline_pin</i>Vote</button>
-   //          </div>
-			// <div className="bouton">
-			// 	<button className="waves-effect waves-light btn car">
-   //              <i className="material-icons left">alarm_on</i>Compte à rebours</button>
-   //          </div>
+			<div className="bouton">
+                <Boutons className="vote" icon="offline_pin" text="Vote" trigger={this.lien} value="1" current={this.state.query} />
+                <Boutons className="car" icon="alarm_on" text="Compte à rebours" trigger={this.lien} value="2" current={this.state.query} />
+            </div>
 		);
 	}
 });
-
-
-
 
 let Boutons = React.createClass({
 	onClick: function() {
@@ -36,8 +34,8 @@ let Boutons = React.createClass({
 	},
 	render: function() {
 		return (
-            <button className={"waves-effect waves-light btn vote " + this.props.color} /*onClick={this.onClick}*/ >
-            <i className="material-icons right">{this.props.icon}</i>{this.props.text}</button>
+            <button className={"waves-effect waves-light btn " + this.props.className} onClick={this.onClick} >
+            <i className="material-icons left">{this.props.icon}</i>{this.props.text}</button>
         );
 	}
 });
@@ -47,7 +45,6 @@ let WrapperAccueil = React.createClass({
         return (
             <div>
                 <VoteCar />
-                <CompteARebours />
             </div>
         );
     }
