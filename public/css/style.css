@@ -57,16 +57,12 @@ body {
 	height: 30vh;
 }
 
-.bouton {
-	display: inline-block;
-	margin: 30px;
-}
-
 .vote {
 	background-color: #1F73CB!important;
 	height: 6vh!important;
 	width: 43vw;
 	font-size: 2em;
+	margin: 10px;
 }
 
 .car {
@@ -74,23 +70,43 @@ body {
 	height: 6vh!important;
 	width: 43vw;
 	font-size: 2em;
+	margin: 10px;
 }
 
 /* Compte à rebours */
 .cptearebours {
-	height: 100%;
+	display: flex;
 	background-color: black;
+	height: 100vh;
+}
+
+.cptearebours > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
 }
 
 .timer {
-	height: 80%;
-	width: 100%;
-	margin: 30px auto;
+	display: flex;
+	flex: 1;
+	padding-top: 2em; /* à modifier */
 	background-color: black;
 	color: white;
 	font-weight: bold;
-	text-align: center;
 	font-size: 8em;
-	border-radius: 10px;
-	padding-top: 75px;
+}
+
+.boutons {
+	height: 17vh;
+}
+
+.boutons button {
+	display: inline-flex;
+    font-weight: bold;
+    height: 6vh !important;
+    width: 20vw;
+    border: 1px solid white;
+    margin: 2em;
 }

@@ -29079,13 +29079,13 @@ var Video = React.createClass({
 	}
 });
 
-var Input = React.createClass({
-	displayName: 'Input',
-
-	render: function render() {
-		return React.createElement('input', { className: 'input', type: 'number', id: 'time-change' });
-	}
-});
+// let Input = React.createClass({
+// 	render: function() {
+// 		return (
+// 			<input className="input" type="number" id="time-change" />
+// 		);
+// 	}
+// });
 
 var Timer = React.createClass({
 	displayName: 'Timer',
@@ -29095,11 +29095,22 @@ var Timer = React.createClass({
 	}
 });
 
+var PlayInit = React.createClass({
+	displayName: 'PlayInit',
+
+	render: function render() {
+		return React.createElement('div', { className: 'boutons' }, React.createElement(Boutons, { className: 'play', color: 'green', icon: 'play_arrow', text: 'Démarrer' }), React.createElement(Boutons, { className: 'init', color: 'black', icon: 'replay', text: 'Réinitialiser' }), React.createElement(Boutons, { className: 'settings', color: 'black', icon: 'settings', text: 'Paramètres' }));
+	}
+});
+
 var Boutons = React.createClass({
 	displayName: 'Boutons',
 
+	onClick: function onClick() {
+		alert("salut");
+	},
 	render: function render() {
-		return React.createElement('div', { className: 'btns_car' }, React.createElement('div', { className: 'btn_play' }, React.createElement('button', { className: 'waves-effect waves-light btn black play' }, React.createElement('i', { className: 'material-icons left' }, 'play_arrow'), 'Démarrer')), React.createElement('div', { className: 'btn_init' }, React.createElement('button', { className: 'waves-effect waves-light btn black init' }, React.createElement('i', { className: 'material-icons left' }, 'replay'), 'Réinitialiser')));
+		return React.createElement('button', { className: "waves-effect waves-light btn " + this.props.className + " " + this.props.color, onClick: this.onClick }, React.createElement('i', { className: 'material-icons left' }, this.props.icon), this.props.text);
 	}
 });
 
@@ -29107,7 +29118,7 @@ var WrapperCar = React.createClass({
 	displayName: 'WrapperCar',
 
 	render: function render() {
-		return React.createElement('div', null, React.createElement(Video, null), React.createElement(Input, null), React.createElement(Timer, null), React.createElement(Boutons, null));
+		return React.createElement('div', null, React.createElement(Video, null), React.createElement(Timer, null), React.createElement(PlayInit, null));
 	}
 });
 

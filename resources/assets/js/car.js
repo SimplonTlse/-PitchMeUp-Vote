@@ -13,13 +13,13 @@ let Video = React.createClass({
 	}
 });
 
-let Input = React.createClass({
-	render: function() {
-		return (
-			<input className="input" type="number" id="time-change" />
-		);
-	}
-});
+// let Input = React.createClass({
+// 	render: function() {
+// 		return (
+// 			<input className="input" type="number" id="time-change" />
+// 		);
+// 	}
+// });
 
 let Timer = React.createClass({
 	render: function() {
@@ -29,19 +29,26 @@ let Timer = React.createClass({
 	}	
 });
 
-let Boutons = React.createClass({
+let PlayInit = React.createClass({
 	render: function() {
 		return (
-			<div className="btns_car">
-				<div className="btn_play">
-					<button className="waves-effect waves-light btn black play">
-	                <i className="material-icons left">play_arrow</i>Démarrer</button>
-	            </div>
-	            <div className="btn_init">
-					<button className="waves-effect waves-light btn black init">
-	                <i className="material-icons left">replay</i>Réinitialiser</button>
-	            </div>
-	        </div>
+			<div className="boutons">
+            	<Boutons className="play" color="green" icon="play_arrow" text="Démarrer" />
+            	<Boutons className="init" color="black" icon="replay" text="Réinitialiser" />
+            	<Boutons className="settings" color="black" icon="settings" text="Paramètres" />
+        	</div>
+        );
+	}
+});
+
+let Boutons = React.createClass({
+	onClick: function() {
+		alert("salut");
+	},
+	render: function() {
+		return (
+			<button className={"waves-effect waves-light btn " + this.props.className + " " + this.props.color} onClick={this.onClick} >
+            <i className="material-icons left">{this.props.icon}</i>{this.props.text}</button>
 		);
 	}
 });
@@ -51,9 +58,8 @@ let WrapperCar = React.createClass({
 		return (
 			<div>
 				<Video />
-				<Input />
 				<Timer />
-				<Boutons />
+				<PlayInit />
 			</div>
 		);
 	}
