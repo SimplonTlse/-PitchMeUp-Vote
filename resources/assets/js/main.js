@@ -1,31 +1,31 @@
 let Wrapper = require('./vote.js');
 let React = require('react');
 let ReactDOM = require('react-dom');
-let node = document.querySelector("[x-react-vote]");
+let nodeVote = document.querySelector("[x-react-vote]");
 
-if (node) {
+if (nodeVote) {
     ReactDOM.render(
         <Wrapper />, 
-        node
+        nodeVote
     );
 };
 
 let WrapperAccueil = require('./accueil.js');
-let node2 = document.querySelector("[x-react-accueil]");
+let nodeAccueil = document.querySelector("[x-react-accueil]");
 
-if (node2) {
+if (nodeAccueil) {
     ReactDOM.render(
         <WrapperAccueil />,
-        node2
+        nodeAccueil
     );
 };
 
 let WrapperCar = require('./car.js');
-let node3 = document.querySelector("[x-react-car]");
+let nodeCar = document.querySelector("[x-react-car]");
 
-if (node3) {
+if (nodeCar) {
     ReactDOM.render(
         <WrapperCar />,
-        node3
+        nodeCar
     );
 };
