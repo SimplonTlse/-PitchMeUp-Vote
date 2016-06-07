@@ -76,7 +76,7 @@ body {
 /* Compte à rebours */
 .cptearebours {
 	display: flex;
-	background-color: black;
+	/*background-color: black;*/
 	height: 100vh;
 }
 
