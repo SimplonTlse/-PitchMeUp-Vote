@@ -5,16 +5,16 @@ let $ = require('jquery');
 
 //fonction pour redirect sur page vote
 let Vote = React.createClass({
-	 getInitialState: function(){
+	getInitialState: function(){
 	 	return {currentVote: null};
-	 },
-     aVote: function(idVote){
+	},
+    aVote: function(idVote){
         if (typeof idVote === "object"){
             idVote = null;
         }
         this.setState({currentVote: idVote});
-     },
-     render: function() {
+    },
+    render: function() {
         return (
             <div className="cartons">
                 <div className="cartons-inner">
