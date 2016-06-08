@@ -29071,54 +29071,68 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var $ = require('jquery');
 
-var Video = React.createClass({
-	displayName: 'Video',
+var CountdownTimer = React.createClass({
+	displayName: 'CountdownTimer',
 
-	render: function render() {
-		return React.createElement('div', { className: 'video' }, React.createElement('div', { className: 'player' }));
-	}
-});
+	getInitialState: function getInitialState() {
+		return {
+			minutes: 1,
+			seconds: 10,
+			dixiemeSeconde: 0
+		};
+	},
+	tick: function tick() {
+		this.setState({ dixiemeSeconde: this.state.dixiemeSeconde - 1 });
 
-// let Input = React.createClass({
-// 	render: function() {
-// 		return (
-// 			<input className="input" type="number" id="time-change" />
-// 		);
-// 	}
-// });
+		if (this.state.dixiemeSeconde < 0) {
+			this.state.dixiemeSeconde = 9;
+			//this.state.seconds = this.state.seconds - 1;
+		}
 
-var Timer = React.createClass({
-	displayName: 'Timer',
+		this.setState({ seconds: this.state.seconds - 1 });
+		if (this.state.seconds <= 0) {
+			this.state.seconds = 59;
+			this.state.minutes = this.state.minutes - 1;
+		}
 
-	render: function render() {
-		return React.createElement('div', { className: 'timer' }, '05 : 00 . 0');
-	}
-});
-
-var PlayInit = React.createClass({
-	displayName: 'PlayInit',
-
-	render: function render() {
-		return React.createElement('div', { className: 'boutons' }, React.createElement(Boutons, { className: 'play', color: 'green', icon: 'play_arrow', text: 'Démarrer' }), React.createElement(Boutons, { className: 'init', color: 'black', icon: 'replay', text: 'Réinitialiser' }), React.createElement(Boutons, { className: 'settings', color: 'black', icon: 'settings', text: 'Paramètres' }));
-	}
-});
-
-var Boutons = React.createClass({
-	displayName: 'Boutons',
-
-	onClick: function onClick() {
-		alert("salut");
+		if (this.state.minutes === 0 && this.state.seconds === 0 && this.state.dixiemeSeconde === 0) {
+			clearInterval(this.interval);
+		}
+	},
+	componentDidMount: function componentDidMount() {
+		this.setState({ minutes: this.state.minutes });
+		this.setState({ seconds: this.state.seconds });
+		this.setState({ dixiemeSeconde: this.state.dixiemeSeconde });
+		var interval = setInterval(this.tick, 1000);
+	},
+	componentWillMount: function componentWillMount() {
+		clearInterval(this.interval);
 	},
 	render: function render() {
-		return React.createElement('button', { className: "waves-effect waves-light btn " + this.props.className + " " + this.props.color, onClick: this.onClick }, React.createElement('i', { className: 'material-icons left' }, this.props.icon), this.props.text);
+		return React.createElement('div', null, this.state.minutes, ' : ', this.state.seconds, ' : ', this.state.dixiemeSeconde)
+		// <div className="boutons">
+		//          	<Bouton className="play" color="green" icon="play_arrow" text="Démarrer" trigger={this.start} />
+		//          	<Bouton className="init" color="black" icon="replay" text="Réinitialiser" trigger={this.componentWillMount} />
+		//         	<Bouton className="settings" color="black" icon="settings" text="Paramètres" trigger={this.settings} />
+		//      	</div>
+		;
 	}
 });
+
+// let Bouton = React.createClass({
+// 	render: function() {
+// 		return (	
+// 			<button className={"waves-effect waves-light btn " + this.props.className + " " + this.props.color} onClick={this.props.trigger} >
+//             <i className="material-icons left">{this.props.icon}</i>{this.props.text}</button>
+//         );
+//     }
+// });
 
 var WrapperCar = React.createClass({
 	displayName: 'WrapperCar',
 
 	render: function render() {
-		return React.createElement('div', null, React.createElement(Video, null), React.createElement(Timer, null), React.createElement(PlayInit, null));
+		return React.createElement('div', null, React.createElement(CountdownTimer, null));
 	}
 });
 
@@ -29130,24 +29144,24 @@ module.exports = WrapperCar;
 var Wrapper = require('./vote.js');
 var React = require('react');
 var ReactDOM = require('react-dom');
-var node = document.querySelector("[x-react-vote]");
+var nodeVote = document.querySelector("[x-react-vote]");
 
-if (node) {
-    ReactDOM.render(React.createElement(Wrapper, null), node);
+if (nodeVote) {
+    ReactDOM.render(React.createElement(Wrapper, null), nodeVote);
 };
 
 var WrapperAccueil = require('./accueil.js');
-var node2 = document.querySelector("[x-react-accueil]");
+var nodeAccueil = document.querySelector("[x-react-accueil]");
 
-if (node2) {
-    ReactDOM.render(React.createElement(WrapperAccueil, null), node2);
+if (nodeAccueil) {
+    ReactDOM.render(React.createElement(WrapperAccueil, null), nodeAccueil);
 };
 
 var WrapperCar = require('./car.js');
-var node3 = document.querySelector("[x-react-car]");
+var nodeCar = document.querySelector("[x-react-car]");
 
-if (node3) {
-    ReactDOM.render(React.createElement(WrapperCar, null), node3);
+if (nodeCar) {
+    ReactDOM.render(React.createElement(WrapperCar, null), nodeCar);
 };
 
 },{"./accueil.js":164,"./car.js":165,"./vote.js":167,"react":157,"react-dom":28}],167:[function(require,module,exports){
