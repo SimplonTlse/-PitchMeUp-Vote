@@ -33116,63 +33116,57 @@ var $ = require('jquery');
 var CountdownTimer = React.createClass({
 	displayName: 'CountdownTimer',
 
+	duration: 50,
 	getInitialState: function getInitialState() {
-		console.log(moment());
 		return {
-			// minutes: 0,
-			// seconds: 10,
 			dixiemeSeconde: 0,
 			startMoment: moment(),
-			startDuration: moment.duration(5000 * 60)
+			startDuration: moment.duration(this.duration * 60)
 		};
 	},
-	tic: function tic() {
-
+	tic: function tic() {},
+	majAffichage: function majAffichage() {
 		var now = moment();
 		var diff = now.diff(this.state.startMoment);
-		//console.log(diff);
+		var remaining = moment.duration(this.state.startDuration).subtract(diff);
 
-		var duration = moment.duration(this.state.startDuration).subtract(diff);
-
-		//console.log(this.state.startDuration);
-
-		//console.log(duration.minutes(),duration.seconds());
-		var min = duration.minutes();
-		console.log(min);
-	},
-	tac: function tac() {
-		this.setState({ dixiemeSeconde: this.state.dixiemeSeconde - 1 });
-		if (this.state.dixiemeSeconde < 1) {
-			this.state.dixiemeSeconde = 10;
+		var time = {
+			minutes: remaining.minutes(),
+			secondes: remaining.seconds(),
+			dixiemeSeconde: parseInt(remaining.milliseconds() / 100, 10)
+		};
+		this.setState(time);
+		/* TODO :
+  	si remaining<0 -> clearInterval
+  	et clignotement (faire class css et faire clignoter)
+  */
+		if (remaining < 0) {
+			clearInterval(this.interval);
 		}
 	},
 	componentDidMount: function componentDidMount() {
-		this.setState({ dixiemeSeconde: this.state.dixiemeSeconde });
-		this.interval = setInterval(this.tic, 1000);
-		this.intervall = setInterval(this.tac, 100);
+		this.interval = setInterval(this.majAffichage, 100);
 	},
 	componentWillMount: function componentWillMount() {
 		clearInterval(this.interval);
 	},
 	render: function render() {
-		return React.createElement('div', null, this.state.min, ' : ', this.state.duration, ' . ', this.state.dixiemeSeconde)
-		// <div className="boutons">
-		//          	<Bouton className="play" color="green" icon="play_arrow" text="Démarrer" trigger={this.start} />
-		//          	<Bouton className="init" color="black" icon="replay" text="Réinitialiser" trigger={this.componentWillMount} />
-		//         	<Bouton className="settings" color="black" icon="settings" text="Paramètres" trigger={this.settings} />
-		//      	</div>
-		;
+		var _state = this.state;
+		var minutes = _state.minutes;
+		var secondes = _state.secondes;
+		var dixiemeSeconde = _state.dixiemeSeconde;
+
+		return React.createElement('div', null, React.createElement('div', null, minutes, ' : ', secondes, ' . ', dixiemeSeconde), React.createElement('div', { className: 'boutons' }, React.createElement(Bouton, { className: 'play', color: 'green', icon: 'play_arrow', text: 'Démarrer', trigger: this.majAffichage }), React.createElement(Bouton, { className: 'init', color: 'black', icon: 'replay', text: 'Réinitialiser', trigger: this.componentWillMount }), React.createElement(Bouton, { className: 'settings', color: 'black', icon: 'settings', text: 'Paramètres', trigger: this.settings })));
 	}
 });
 
-// let Bouton = React.createClass({
-// 	render: function() {
-// 		return (	
-// 			<button className={"waves-effect waves-light btn " + this.props.className + " " + this.props.color} onClick={this.props.trigger} >
-//             <i className="material-icons left">{this.props.icon}</i>{this.props.text}</button>
-//         );
-//     }
-// });
+var Bouton = React.createClass({
+	displayName: 'Bouton',
+
+	render: function render() {
+		return React.createElement('button', { className: "waves-effect waves-light btn " + this.props.className + " " + this.props.color, onClick: this.props.trigger }, React.createElement('i', { className: 'material-icons left' }, this.props.icon), this.props.text);
+	}
+});
 
 var WrapperCar = React.createClass({
 	displayName: 'WrapperCar',
