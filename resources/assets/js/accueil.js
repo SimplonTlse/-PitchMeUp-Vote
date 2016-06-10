@@ -2,7 +2,6 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 let $ = require('jquery');
-let Redirect = require('react-redirect');
 
 let VoteCar = React.createClass({
 	getInitialState: function() {
